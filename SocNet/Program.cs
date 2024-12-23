@@ -1,6 +1,7 @@
 ﻿using SocNet.BLL.Exceptions;
 using SocNet.BLL.Models;
 using SocNet.BLL.Services;
+using SocNet.PLL.Helpers;
 
 namespace SocNet;
 
@@ -32,9 +33,10 @@ internal class Program
                         try
                         {
                             User user = userService.Authenticate(authenticationData);
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine($"Success! Welcome to FB vol.2, {user.FirstName}");
-                            Console.ForegroundColor = ConsoleColor.White;
+                            //Console.ForegroundColor = ConsoleColor.Green;
+                            //Console.WriteLine($"Success! Welcome to FB vol.2, {user.FirstName}");
+                            //Console.ForegroundColor = ConsoleColor.White; // теперь такая конструкция лишняя, она заменена на новую здесь и далее
+                            SuccessMessage.Show($"Success! Welcome to FB vol.2, {user.FirstName}");
 
                             while (true)
                             {
@@ -64,29 +66,22 @@ internal class Program
                                         {
                                             Console.Write("New name: ");
                                             user.FirstName = Console.ReadLine();
-                                            Console.WriteLine();
 
                                             Console.Write("New surname: ");
                                             user.LastName = Console.ReadLine();
-                                            Console.WriteLine();
 
                                             Console.Write("New photo link: ");
                                             user.Photo = Console.ReadLine();
-                                            Console.WriteLine();
 
                                             Console.Write("New favorite movie: ");
                                             user.FavoriteMovie = Console.ReadLine();
-                                            Console.WriteLine();
 
                                             Console.Write("New favorite book: ");
                                             user.FavoriteBook = Console.ReadLine();
-                                            Console.WriteLine();
 
                                             userService.Update(user);
 
-                                            Console.ForegroundColor = ConsoleColor.Green;
-                                            Console.WriteLine("Profile were successfully updated");
-                                            Console.ForegroundColor = ConsoleColor.White;
+                                            SuccessMessage.Show("Profile were successfully updated");
                                             break;
                                         }
                                 }
@@ -94,15 +89,11 @@ internal class Program
                         }
                         catch (WrongPasswordException)
                         {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Wrong password!");
-                            Console.ForegroundColor = ConsoleColor.White;
+                            AlertMessage.Show("Wrong password!");
                         }
                         catch (UserNotFoundException)
                         {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("User not found!");
-                            Console.ForegroundColor = ConsoleColor.White;
+                            AlertMessage.Show("User not found!");
                         }
                         break;
                     }
@@ -112,39 +103,28 @@ internal class Program
 
                         Console.Write("Enter your name:");
                         userRegistrationData.FirstName = Console.ReadLine();
-                        Console.WriteLine();
 
                         Console.Write("Enter your surname:");
                         userRegistrationData.LastName = Console.ReadLine();
-                        Console.WriteLine();
 
                         Console.Write("Enter your password:");
                         userRegistrationData.Password = Console.ReadLine();
-                        Console.WriteLine();
 
                         Console.Write("Enter your email:");
                         userRegistrationData.Email = Console.ReadLine();
-                        Console.WriteLine();
 
                         try
                         {
                             userService.Register(userRegistrationData);
-
-                            Console.ForegroundColor = ConsoleColor.Green;
-                            Console.WriteLine("Success! Now you can sign in");
-                            Console.ForegroundColor = ConsoleColor.White;
+                            SuccessMessage.Show("Success! Now you can sign in");
                         }
                         catch (ArgumentNullException)
                         {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Some fileds weren't filled");
-                            Console.ForegroundColor = ConsoleColor.White;
+                            AlertMessage.Show("Some fields were filled incorrectly");
                         }
                         catch (Exception ex)
                         {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Something went wrong - {0}", ex);
-                            Console.ForegroundColor = ConsoleColor.White;
+                            AlertMessage.Show($"Something went wrong - {ex}");
                         }
                         break;
                     }

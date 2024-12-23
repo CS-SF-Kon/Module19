@@ -8,17 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="PLL\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.35" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="DAL\DB\soc_net_DB.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

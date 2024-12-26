@@ -51,7 +51,7 @@ internal class MessageService
         return messages;
     }
 
-    public void SendMEssage(MessageSendingData messageSendingData)
+    public void SendMessage(MessageSendingData messageSendingData)
     {
         if (String.IsNullOrEmpty(messageSendingData.Content))
             throw new ArgumentNullException();

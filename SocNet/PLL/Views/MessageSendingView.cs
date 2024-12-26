@@ -34,7 +34,7 @@ internal class MessageSendingView
 
         try
         {
-            messageService.SendMEssage(messageSendingData);
+            messageService.SendMessage(messageSendingData);
             SuccessMessage.Show("Message successfully sent");
         }
         catch (UserNotFoundException)

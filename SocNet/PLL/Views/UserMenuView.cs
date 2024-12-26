@@ -21,8 +21,10 @@ internal class UserMenuView
     {
         while (true)
         {
+            Console.WriteLine($"Friends: {user.friends.Count()}\n"); // 
+            
             Console.WriteLine($"Incoming messages: {user.incomingMessages.Count()}");
-            Console.WriteLine($"Outgoing messages: {user.outgoingMessages.Count()}");
+            Console.WriteLine($"Outgoing messages: {user.outgoingMessages.Count()}\n");
 
             Console.WriteLine("Profile (1)");
             Console.WriteLine("Edit profile (2)");
@@ -46,6 +48,11 @@ internal class UserMenuView
                 case "2":
                     {
                         Program.userDataUpdateView.Show(user);
+                        break;
+                    }
+                case "3":
+                    {
+                        Program.friendsInfoView.Show(user); 
                         break;
                     }
                 case "4":

@@ -15,10 +15,12 @@ internal class UserService
 {
     IUserRepository userRepository;
     MessageService messageService;
+    FriendService friendService;
     public UserService()
     {
         userRepository = new UserRepository();
         messageService = new MessageService();
+        friendService = new FriendService();
     }
 
     public void Register(UserRegistrationData userRegistrationData)
@@ -91,6 +93,7 @@ internal class UserService
     {
         var incomingMessages = messageService.GetIncomingMessagesByUserID(userEntity.id);
         var outgoingMessages = messageService.GetOutgoingMessagesByUserID(userEntity.id);
+        var friends = friendService.GetFriendsList(userEntity.id);
         return new User(userEntity.id,
                         userEntity.firstname,
                         userEntity.lastname,
@@ -100,6 +103,7 @@ internal class UserService
                         userEntity.favourite_movie,
                         userEntity.favorite_book,
                         incomingMessages,
-                        outgoingMessages);
+                        outgoingMessages,
+                        friends);
     }
 }

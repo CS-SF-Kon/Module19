@@ -10,6 +10,9 @@ internal class Program
 {
     static MessageService messageService;
     static UserService userService;
+
+    static FriendService friendService;
+
     public static MainView mainView;
     public static RegistrationView registrationView;
     public static AuthenticationView authenticationView;
@@ -20,10 +23,15 @@ internal class Program
     public static UserIncomingMessageView userIncomingMessageView;
     public static UserOutgoingMessageView userOutgoingMessageView;
 
+    public static FriendsInfoView friendsInfoView;
+
     static void Main(string[] args)
     {
         messageService = new MessageService();
         userService = new UserService();
+
+        friendService = new FriendService();
+
         mainView = new MainView();
         registrationView = new RegistrationView(userService);
         authenticationView = new AuthenticationView(userService);
@@ -33,6 +41,8 @@ internal class Program
         messageSendView = new MessageSendingView(userService, messageService);
         userIncomingMessageView = new UserIncomingMessageView();
         userOutgoingMessageView = new UserOutgoingMessageView();
+
+        friendsInfoView = new FriendsInfoView(userService, friendService);
 
         while (true)
         {

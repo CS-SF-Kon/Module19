@@ -18,11 +18,12 @@ internal class User
     public string FavoriteBook { get; set;}
     public IEnumerable<Message> incomingMessages;
     public IEnumerable<Message> outgoingMessages;
+    public IEnumerable<Friend> friends;
 
     public User(
         int id, string firstName, string lastName, string password,
         string email, string photo, string favMovie, string favBook, 
-        IEnumerable<Message> incomingMessages, IEnumerable<Message> outgoingMessages)
+        IEnumerable<Message> incomingMessages, IEnumerable<Message> outgoingMessages, IEnumerable<Friend> friends)
     {
         this.Id = id;
         this.FirstName = firstName;
@@ -34,5 +35,6 @@ internal class User
         this.FavoriteBook = favBook;
         this.incomingMessages = incomingMessages;
         this.outgoingMessages = outgoingMessages;
+        this.friends = friends;
     }
 }

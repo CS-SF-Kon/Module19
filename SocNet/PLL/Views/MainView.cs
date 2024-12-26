@@ -10,6 +10,7 @@ internal class MainView
 {
     public void Show()
     {
+        Console.WriteLine("Welcome to FB vol.2!");
         Console.WriteLine("Sign in (1):");
         Console.WriteLine("Sign up (2):");
 

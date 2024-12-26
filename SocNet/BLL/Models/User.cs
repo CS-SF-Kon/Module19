@@ -16,10 +16,13 @@ internal class User
     public string Photo { get; set; }
     public string FavoriteMovie { get; set; }
     public string FavoriteBook { get; set;}
+    public IEnumerable<Message> incomingMessages;
+    public IEnumerable<Message> outgoingMessages;
 
     public User(
         int id, string firstName, string lastName, string password,
-        string email, string photo, string favMovie, string favBook)
+        string email, string photo, string favMovie, string favBook, 
+        IEnumerable<Message> incomingMessages, IEnumerable<Message> outgoingMessages)
     {
         this.Id = id;
         this.FirstName = firstName;
@@ -29,5 +32,7 @@ internal class User
         this.Photo = photo;
         this.FavoriteMovie = favMovie;
         this.FavoriteBook = favBook;
+        this.incomingMessages = incomingMessages;
+        this.outgoingMessages = outgoingMessages;
     }
 }

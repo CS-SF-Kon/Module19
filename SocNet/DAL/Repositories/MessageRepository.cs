@@ -20,7 +20,7 @@ internal class MessageRepository : BaseRepository, IMessageRepository
     public int Create(MessageEntity message)
     {
         return Execute(@"INSERT INTO messages (content, sender_id, recipient_id)
-                        VALUES (:content, :sender_id, :recipient_id", message);
+                        VALUES (:content, :sender_id, :recipient_id)", message);
     }
 
     public IEnumerable<MessageEntity> FindBySenderID(int senderID)

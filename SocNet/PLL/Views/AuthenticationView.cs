@@ -24,7 +24,6 @@ internal class AuthenticationView
 
         Console.Write("Your email: ");
         authenticationData.Email = Console.ReadLine();
-        Console.WriteLine();
 
         Console.Write("Your password: ");
         authenticationData.Password = Console.ReadLine();

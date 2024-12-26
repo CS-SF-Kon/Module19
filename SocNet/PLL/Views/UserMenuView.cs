@@ -21,8 +21,8 @@ internal class UserMenuView
     {
         while (true)
         {
-            Console.WriteLine($"Incoming messages: {user.IncomingMessages.Count()}");
-            Console.WriteLine($"Outgoing messages: {user.OutgoingMessages.Count()}");
+            Console.WriteLine($"Incoming messages: {user.incomingMessages.Count()}");
+            Console.WriteLine($"Outgoing messages: {user.outgoingMessages.Count()}");
 
             Console.WriteLine("Profile (1)");
             Console.WriteLine("Edit profile (2)");
@@ -36,7 +36,8 @@ internal class UserMenuView
 
             if (keyValue == "7") break;
 
-            switch (keyValue) {
+            switch (keyValue)
+            {
                 case "1":
                     {
                         Program.userInfoView.Show(user);
@@ -54,14 +55,15 @@ internal class UserMenuView
                     }
                 case "5":
                     {
-                        Program.incomingMessageView.Show(user.IncomingMessages);
+                        Program.userIncomingMessageView.Show(user.incomingMessages);
                         break;
                     }
                 case "6":
                     {
-                        Program.outgoingMessageView.Show(user.OutgoingMessages);
+                        Program.userOutgoingMessageView.Show(user.outgoingMessages);
                         break;
                     }
             }
+        }
     }
 }

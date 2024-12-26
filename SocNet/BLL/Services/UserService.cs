@@ -14,9 +14,11 @@ namespace SocNet.BLL.Services;
 internal class UserService
 {
     IUserRepository userRepository;
+    MessageService messageService;
     public UserService()
     {
         userRepository = new UserRepository();
+        messageService = new MessageService();
     }
 
     public void Register(UserRegistrationData userRegistrationData)
@@ -87,6 +89,8 @@ internal class UserService
 
     private User ConstructUserModel(UserEntity userEntity)
     {
+        var incomingMessages = messageService.GetIncomingMessagesByUserID(userEntity.id);
+        var outgoingMessages = messageService.GetOutgoingMessagesByUserID(userEntity.id);
         return new User(userEntity.id,
                         userEntity.firstname,
                         userEntity.lastname,
@@ -94,6 +98,8 @@ internal class UserService
                         userEntity.email,
                         userEntity.photo,
                         userEntity.favourite_movie,
-                        userEntity.favorite_book);
+                        userEntity.favorite_book,
+                        incomingMessages,
+                        outgoingMessages);
     }
 }

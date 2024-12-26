@@ -40,7 +40,7 @@ internal class MessageService
     {
         var messages = new List<Message>();
 
-        messageRepository.FindByRecipientID(senderID).ToList().ForEach(m =>
+        messageRepository.FindBySenderID(senderID).ToList().ForEach(m =>
         {
             var senderUserEntity = userRepository.FindByID(m.sender_id);
             var recipientUserEntity = userRepository.FindByID(m.recipient_id);

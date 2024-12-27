@@ -1,12 +1,6 @@
 ﻿using SocNet.BLL.Models;
 using SocNet.DAL.Repositories;
 using SocNet.BLL.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SocNet.DAL.Entities;
 
 namespace SocNet.BLL.Services;
@@ -15,7 +9,7 @@ namespace SocNet.BLL.Services;
 /// Сервис, отвечающий за работу с сщностью Сообщение внутри приложения. 
 /// Позволяет получать перечень входящих, перечень исходящих сообщений, передавать данные о новом сообщении в БД через MessageRepository
 /// </summary>
-internal class MessageService
+public class MessageService
 {
     IMessageRepository messageRepository;
     IUserRepository userRepository;
@@ -75,13 +69,13 @@ internal class MessageService
     /// <exception cref="Exception"></exception>
     public void SendMessage(MessageSendingData messageSendingData)
     {
-        if (String.IsNullOrEmpty(messageSendingData.Content))
+        if (string.IsNullOrEmpty(messageSendingData.Content))
             throw new ArgumentNullException();
 
         if (messageSendingData.Content.Length > 5000)
             throw new ArgumentOutOfRangeException();
 
-        var findUserEntity = this.userRepository.FindByEmail(messageSendingData.RecipientEmail);
+        var findUserEntity = userRepository.FindByEmail(messageSendingData.RecipientEmail);
         if (findUserEntity is null) throw new UserNotFoundException();
 
         var messageEntity = new MessageEntity()
@@ -91,7 +85,7 @@ internal class MessageService
             recipient_id = findUserEntity.id
         };
 
-        if (this.messageRepository.Create(messageEntity) == 0)
+        if (messageRepository.Create(messageEntity) == 0)
             throw new Exception();
     }
 }

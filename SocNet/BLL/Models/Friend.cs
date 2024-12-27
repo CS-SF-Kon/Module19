@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SocNet.BLL.Models;
+﻿namespace SocNet.BLL.Models;
 
 /// <summary>
 /// Описание  объекта Друг, которой оперирует приложение внутри себя
 /// </summary>
-internal class Friend
+public class Friend
 {
     public string FriendFirstName {  get; set; }
     public string FriendLastName {  get; set; }

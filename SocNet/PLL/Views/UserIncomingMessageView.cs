@@ -1,16 +1,11 @@
 ﻿using SocNet.BLL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
 
 /// <summary>
 /// Оформлюшка для "окна" входящих сообщений
 /// </summary>
-internal class UserIncomingMessageView
+public class UserIncomingMessageView
 {
     public void Show(IEnumerable<Message> incomingMessages)
     {

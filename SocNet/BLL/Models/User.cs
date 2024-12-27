@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SocNet.BLL.Models;
+﻿namespace SocNet.BLL.Models;
 
 /// <summary>
 /// Описание  объекта Пользователь, которой оперирует приложение внутри себя
 /// </summary>
-internal class User
+public class User
 {
     public int Id { get; }
     public string FirstName { get; set; }
@@ -28,14 +22,14 @@ internal class User
         string email, string photo, string favMovie, string favBook, 
         IEnumerable<Message> incomingMessages, IEnumerable<Message> outgoingMessages, IEnumerable<Friend> friends)
     {
-        this.Id = id;
-        this.FirstName = firstName;
-        this.LastName = lastName;
-        this.Password = password;
-        this.Email = email;
-        this.Photo = photo;
-        this.FavoriteMovie = favMovie;
-        this.FavoriteBook = favBook;
+        Id = id;
+        FirstName = firstName;
+        LastName = lastName;
+        Password = password;
+        Email = email;
+        Photo = photo;
+        FavoriteMovie = favMovie;
+        FavoriteBook = favBook;
         this.incomingMessages = incomingMessages;
         this.outgoingMessages = outgoingMessages;
         this.friends = friends;

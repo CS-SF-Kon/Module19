@@ -1,10 +1,5 @@
 ﻿using SocNet.BLL.Models;
 using SocNet.DAL.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SocNet.BLL.Exceptions;
 using SocNet.DAL.Entities;
 
@@ -14,7 +9,7 @@ namespace SocNet.BLL.Services;
 /// Сервис, отвечающий за работу с объектом Друг внутри приложения. 
 /// Позволяет создавать перечень друзей (имя и фамилия) по id пользователя, передавать данные о новой дружбе в БД через FriendRepository
 /// </summary>
-internal class FriendService
+public class FriendService
 {
     IFriendRepository friendRepository;
     IUserRepository userRepository;

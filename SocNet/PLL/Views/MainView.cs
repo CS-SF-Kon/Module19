@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SocNet.PLL.Views;
+﻿namespace SocNet.PLL.Views;
 
 /// <summary>
 /// Оформлюшка для приветственного "окна"
 /// </summary>
-internal class MainView
+public class MainView
 {
     public void Show()
     {

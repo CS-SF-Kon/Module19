@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SocNet.BLL.Models;
+﻿namespace SocNet.BLL.Models;
 
 /// <summary>
 /// Описание  объекта Сообщение, которой оперирует приложение внутри себя
 /// </summary>
-internal class Message
+public class Message
 {
     public int Id { get; }
     public string Content { get; }
@@ -18,9 +12,9 @@ internal class Message
 
     public Message(int id, string content, string senderEmail, string recipientEmail)
     {
-        this.Id = id;
-        this.Content = content;
-        this.SenderEmail = senderEmail;
-        this.RecipientEmail = recipientEmail;
+        Id = id;
+        Content = content;
+        SenderEmail = senderEmail;
+        RecipientEmail = recipientEmail;
     }
 }

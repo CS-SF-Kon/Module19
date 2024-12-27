@@ -1,18 +1,13 @@
 ﻿using SocNet.BLL.Models;
 using SocNet.BLL.Services;
 using SocNet.PLL.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
 
 /// <summary>
 /// Оформлюшка для "окна" регистрации
 /// </summary>
-internal class RegistrationView
+public class RegistrationView
 {
     UserService userService;
 

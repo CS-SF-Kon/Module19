@@ -1,13 +1,8 @@
 ﻿using SocNet.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SocNet.DAL.Repositories;
 
-internal interface IFriendRepository
+public interface IFriendRepository
 {
     int Create(FriendEntity friend);
     IEnumerable<FriendEntity> FindAllByUserID(int userId);
@@ -18,7 +13,7 @@ internal interface IFriendRepository
 /// Класс для взамимодействия с БД в части работы с Друзьями. 
 /// Позволяет добавлять запись в БД о новой дружбе, запрашивать перечень друзей (id) по id пользователя, удалять записи о дружбе по id в таблице (не применяется)
 /// </summary>
-internal class FriendRepository : BaseRepository, IFriendRepository
+public class FriendRepository : BaseRepository, IFriendRepository
 {
     /// <summary>
     /// Метод добавления в БД записи о новой дружбе

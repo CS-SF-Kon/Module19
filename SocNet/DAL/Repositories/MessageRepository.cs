@@ -1,13 +1,8 @@
 ﻿using SocNet.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SocNet.DAL.Repositories;
 
-internal interface IMessageRepository
+public interface IMessageRepository
 {
     int Create(MessageEntity message);
     IEnumerable<MessageEntity> FindBySenderID(int senderID);
@@ -19,7 +14,7 @@ internal interface IMessageRepository
 /// Класс для взаимодействия с БД в части работы с Сообщениями. 
 /// Позволяет добавлять запись в БД о новом сообщении, запрашивать перечень сообщений по id оправителя, запрашивать перечень сообщений по почте получателя, удалять записи о сообщениях по id в таблице
 /// </summary>
-internal class MessageRepository : BaseRepository, IMessageRepository
+public class MessageRepository : BaseRepository, IMessageRepository
 {
     /// <summary>
     /// Метод добавления в БД записи о новом сообщении

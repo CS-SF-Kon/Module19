@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SocNet.DAL.Entities;
+﻿namespace SocNet.DAL.Entities;
 
 /// <summary>
 /// Набор даннх для связи с БД, обозначающий объект Пользователь
 /// </summary>
-internal class UserEntity
+public class UserEntity
 {
     public int id { get; set; }
     public string firstname { get; set; }

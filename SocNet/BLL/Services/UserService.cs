@@ -1,11 +1,6 @@
 ﻿using SocNet.BLL.Models;
 using SocNet.BLL.Exceptions;
 using SocNet.DAL.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using SocNet.DAL.Entities;
 
@@ -15,7 +10,7 @@ namespace SocNet.BLL.Services;
 /// Сервис для работы с объектом Пользователь внутри приложения. 
 /// Позволяет проводить регистарцию, авторизацию пользователя, поиск по почте, обновление описания профиля и сборку объекта Пользователь
 /// </summary>
-internal class UserService
+public class UserService
 {
     IUserRepository userRepository;
     MessageService messageService;
@@ -35,13 +30,13 @@ internal class UserService
     /// <exception cref="Exception"></exception>
     public void Register(UserRegistrationData userRegistrationData)
     {
-        if (String.IsNullOrEmpty(userRegistrationData.FirstName))
+        if (string.IsNullOrEmpty(userRegistrationData.FirstName))
             throw new ArgumentNullException();
-        if (String.IsNullOrEmpty(userRegistrationData.LastName))
+        if (string.IsNullOrEmpty(userRegistrationData.LastName))
             throw new ArgumentNullException();
-        if (String.IsNullOrEmpty(userRegistrationData.Password))
+        if (string.IsNullOrEmpty(userRegistrationData.Password))
             throw new ArgumentNullException();
-        if (String.IsNullOrEmpty(userRegistrationData.Email))
+        if (string.IsNullOrEmpty(userRegistrationData.Email))
             throw new ArgumentNullException();
         if (userRegistrationData.Password.Length < 8)
             throw new ArgumentNullException();
@@ -58,7 +53,7 @@ internal class UserService
             email = userRegistrationData.Email
         };
 
-        if (this.userRepository.Create(userEntity) == 0)
+        if (userRepository.Create(userEntity) == 0)
             throw new Exception();
     }
 

@@ -1,18 +1,13 @@
 ﻿using SocNet.BLL.Models;
 using SocNet.BLL.Services;
 using SocNet.PLL.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
 
 /// <summary>
 /// Оформлюшка для "окна" редактирования профиля
 /// </summary>
-internal class UserDataUpdateView
+public class UserDataUpdateView
 {
     UserService userService;
     public UserDataUpdateView(UserService userService)
@@ -37,7 +32,7 @@ internal class UserDataUpdateView
         Console.Write("New favorite book: ");
         user.FavoriteBook = Console.ReadLine();
 
-        this.userService.Update(user);
+        userService.Update(user);
 
         SuccessMessage.Show("Profile successfully updated");
     }

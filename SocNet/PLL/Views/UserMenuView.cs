@@ -1,17 +1,12 @@
 ﻿using SocNet.BLL.Models;
 using SocNet.BLL.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
 
 /// <summary>
 /// Оформлюшка для "окна" главного меню
 /// </summary>
-internal class UserMenuView
+public class UserMenuView
 {
     UserService UserService;
 

@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SocNet.DAL.Entities;
+﻿namespace SocNet.DAL.Entities;
 
 /// <summary>
 /// Набор данных для связи с БД, обозначающий объект Друг
 /// </summary>
-internal class FriendEntity
+public class FriendEntity
 {
     public int id { get; set; }
     public int user_id {  get; set; }

@@ -1,16 +1,11 @@
 ﻿using SocNet.BLL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
 
 /// <summary>
 /// Оформлюшка для "окна" профиля пользователя
 /// </summary>
-internal class UserInfoView
+public class UserInfoView
 {
     public void Show(User user)
     {

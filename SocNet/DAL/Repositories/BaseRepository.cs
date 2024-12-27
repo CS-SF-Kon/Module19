@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SQLite;
+﻿using System.Data.SQLite;
 using System.Data;
 using Dapper;
 
@@ -12,7 +7,7 @@ namespace SocNet.DAL.Repositories;
 /// <summary>
 /// Класс для подключения к файлу БД
 /// </summary>
-internal class BaseRepository
+public class BaseRepository
 {
     /// <summary>
     /// Метод для исполнения запроса, подразумевающего возврат одной записи

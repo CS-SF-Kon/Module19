@@ -1,10 +1,5 @@
 ﻿using SocNet.BLL.Services;
 using SocNet.BLL.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SocNet.PLL.Helpers;
 using SocNet.BLL.Exceptions;
 
@@ -13,7 +8,7 @@ namespace SocNet.PLL.Views;
 /// <summary>
 /// Оформлюшка для "окна" оправки сообщения
 /// </summary>
-internal class MessageSendingView
+public class MessageSendingView
 {
     UserService userService;
     MessageService messageService;

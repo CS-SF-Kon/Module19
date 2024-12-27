@@ -1,12 +1,9 @@
-﻿using SocNet.BLL.Exceptions;
-using SocNet.BLL.Models;
-using SocNet.BLL.Services;
-using SocNet.PLL.Helpers;
+﻿using SocNet.BLL.Services;
 using SocNet.PLL.Views;
 
 namespace SocNet;
 
-internal class Program
+public class Program
 {
     static MessageService messageService;
     static UserService userService;
@@ -46,7 +43,7 @@ internal class Program
 
         while (true)
         {
-            mainView.Show();
+            mainView.Show();            
         }
     }
 }

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SocNet.DAL.Entities;
+﻿using SocNet.DAL.Entities;
 
 namespace SocNet.DAL.Repositories;
 
-internal interface IUserRepository
+public interface IUserRepository
 {
     int Create(UserEntity userEntity);
     UserEntity FindByEmail(string email);
@@ -21,7 +16,7 @@ internal interface IUserRepository
 /// Класс для взаимодействия с БД в части работы с Пользователями. 
 /// Позволяет добавлять в БД запись о новых пользователях, искать пользователя по его почте, получать перечень всех пользователей в системе (не используется), искать пользователя по его id, обновлять данные пользователя в БД, удалять запись из БД о пользователе 
 /// </summary>
-internal class UserRepository : BaseRepository, IUserRepository
+public class UserRepository : BaseRepository, IUserRepository
 {
     /// <summary>
     /// Метод для добавления в БД записи о новом пользователе

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.PLL.Helpers;
 
+/// <summary>
+/// Класс для оформления сообщения об ошибке
+/// </summary>
 internal class AlertMessage
 {
     public static void Show(string message)

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
 
+/// <summary>
+/// Оформлюшка для "окна" главного меню
+/// </summary>
 internal class UserMenuView
 {
     UserService UserService;

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
 
+/// <summary>
+/// Оформлюшка для "окна" исходящих сообщений
+/// </summary>
 internal class UserOutgoingMessageView
 {
     public void Show(IEnumerable<Message> outgiongMessages)

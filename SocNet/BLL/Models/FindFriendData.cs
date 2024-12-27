@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.BLL.Models;
 
+/// <summary>
+/// Набор данных для поиска друга по почте
+/// </summary>
 internal class FindFriendData
 {
     public int UserId { get; set; }

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.DAL.Entities;
 
+/// <summary>
+/// Набор данных для связи с БД, обозначающий объект Друг
+/// </summary>
 internal class FriendEntity
 {
     public int id { get; set; }

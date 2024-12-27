@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.DAL.Entities;
 
+/// <summary>
+/// Набор даннх для связи с БД, обозначающий объект Сообщение
+/// </summary>
 internal class MessageEntity
 {
     public int id { get; set; }

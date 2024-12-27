@@ -9,7 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
-
+/// <summary>
+/// Оформлюшка для "окна" авторизации
+/// </summary>
 internal class AuthenticationView
 {
     UserService userService;

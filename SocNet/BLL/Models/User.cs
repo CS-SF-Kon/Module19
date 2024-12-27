@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.BLL.Models;
 
+/// <summary>
+/// Описание  объекта Пользователь, которой оперирует приложение внутри себя
+/// </summary>
 internal class User
 {
     public int Id { get; }

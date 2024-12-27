@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.BLL.Models;
 
+/// <summary>
+/// Набор данных для отправки сообщения
+/// </summary>
 internal class MessageSendingData
 {
     public int SenderID { get; set; }

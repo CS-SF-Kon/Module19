@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.BLL.Models;
 
+/// <summary>
+/// Описание  объекта Сообщение, которой оперирует приложение внутри себя
+/// </summary>
 internal class Message
 {
     public int Id { get; }

@@ -11,6 +11,10 @@ using SocNet.DAL.Entities;
 
 namespace SocNet.BLL.Services;
 
+/// <summary>
+/// Сервис, отвечающий за работу с сщностью Сообщение внутри приложения. 
+/// Позволяет получать перечень входящих, перечень исходящих сообщений, передавать данные о новом сообщении в БД через MessageRepository
+/// </summary>
 internal class MessageService
 {
     IMessageRepository messageRepository;
@@ -21,6 +25,11 @@ internal class MessageService
         messageRepository = new MessageRepository();
     }
 
+    /// <summary>
+    /// Метод для получения коллекции объектов Сообщение, обозначающей входящие сообщения
+    /// </summary>
+    /// <param name="recipientID"></param>
+    /// <returns>Коллекция объектов Сообщение, обозначающих входящие сообщения, для использования внутри приложения</returns>
     public IEnumerable<Message> GetIncomingMessagesByUserID(int recipientID)
     {
         var messages = new List<Message>();
@@ -36,6 +45,11 @@ internal class MessageService
         return messages;
     }
 
+    /// <summary>
+    /// Метод для получения коллекции объектов Сообщение, обозначающей исходящие сообщения
+    /// </summary>
+    /// <param name="senderID"></param>
+    /// <returns>Коллекция объектов Сообщение, обозначающих исходящие сообщения, для использования внутри приложения</returns>
     public IEnumerable<Message> GetOutgoingMessagesByUserID(int senderID)
     {
         var messages = new List<Message>();
@@ -51,6 +65,14 @@ internal class MessageService
         return messages;
     }
 
+    /// <summary>
+    /// Метод для поиска пользователя и отправки ему сообщения, а также дял передачи данных в БД о новом сообщении через MessageRepository
+    /// </summary>
+    /// <param name="messageSendingData"></param>
+    /// <exception cref="ArgumentNullException"></exception>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    /// <exception cref="UserNotFoundException"></exception>
+    /// <exception cref="Exception"></exception>
     public void SendMessage(MessageSendingData messageSendingData)
     {
         if (String.IsNullOrEmpty(messageSendingData.Content))

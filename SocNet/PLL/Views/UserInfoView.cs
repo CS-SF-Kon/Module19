@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
 
+/// <summary>
+/// Оформлюшка для "окна" профиля пользователя
+/// </summary>
 internal class UserInfoView
 {
     public void Show(User user)

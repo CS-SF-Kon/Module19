@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.BLL.Models;
 
+/// <summary>
+/// Описание  объекта Друг, которой оперирует приложение внутри себя
+/// </summary>
 internal class Friend
 {
     public string FriendFirstName {  get; set; }

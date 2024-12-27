@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.BLL.Exceptions;
 
+/// <summary>
+/// Если пароль неверный
+/// </summary>
 internal class WrongPasswordException : Exception
 {
 }

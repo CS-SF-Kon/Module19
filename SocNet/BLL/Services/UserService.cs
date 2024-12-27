@@ -11,6 +11,10 @@ using SocNet.DAL.Entities;
 
 namespace SocNet.BLL.Services;
 
+/// <summary>
+/// Сервис для работы с объектом Пользователь внутри приложения. 
+/// Позволяет проводить регистарцию, авторизацию пользователя, поиск по почте, обновление описания профиля и сборку объекта Пользователь
+/// </summary>
 internal class UserService
 {
     IUserRepository userRepository;
@@ -23,6 +27,12 @@ internal class UserService
         friendService = new FriendService();
     }
 
+    /// <summary>
+    /// Метод, отвечающий за регистарцию пользователя
+    /// </summary>
+    /// <param name="userRegistrationData"></param>
+    /// <exception cref="ArgumentNullException"></exception>
+    /// <exception cref="Exception"></exception>
     public void Register(UserRegistrationData userRegistrationData)
     {
         if (String.IsNullOrEmpty(userRegistrationData.FirstName))
@@ -52,6 +62,13 @@ internal class UserService
             throw new Exception();
     }
 
+    /// <summary>
+    /// Метод, отвечающий за авторизацию пользователя
+    /// </summary>
+    /// <param name="userAuthenticationData"></param>
+    /// <returns>Объект Пользователь</returns>
+    /// <exception cref="UserNotFoundException"></exception>
+    /// <exception cref="WrongPasswordException"></exception>
     public User Authenticate(UserAuthenticationData userAuthenticationData)
     {
         var findUserEntity = userRepository.FindByEmail(userAuthenticationData.Email);
@@ -65,6 +82,12 @@ internal class UserService
         return ConstructUserModel(findUserEntity);
     }
 
+    /// <summary>
+    /// Метод, осуществляющий поиск пользователя по почте
+    /// </summary>
+    /// <param name="email"></param>
+    /// <returns>Объект Пользователь, найденная по почте</returns>
+    /// <exception cref="UserNotFoundException"></exception>
     public User FindByEmail(string email)
     {
         var findUserEntity = userRepository.FindByEmail(email);
@@ -74,6 +97,10 @@ internal class UserService
         return ConstructUserModel(findUserEntity);
     }
 
+    /// <summary>
+    /// Метод, обновляющий информацию о пользователе
+    /// </summary>
+    /// <param name="user"></param>
     public void Update(User user)
     {
         var updatableUserEntity = new UserEntity()
@@ -89,6 +116,11 @@ internal class UserService
         };
     }
 
+    /// <summary>
+    /// Метод, выполняющий сборку объекта Пользователь
+    /// </summary>
+    /// <param name="userEntity"></param>
+    /// <returns>Объект Пользователь</returns>
     private User ConstructUserModel(UserEntity userEntity)
     {
         var incomingMessages = messageService.GetIncomingMessagesByUserID(userEntity.id);

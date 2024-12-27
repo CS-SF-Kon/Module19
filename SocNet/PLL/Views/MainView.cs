@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
 
+/// <summary>
+/// Оформлюшка для приветственного "окна"
+/// </summary>
 internal class MainView
 {
     public void Show()

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
 
+/// <summary>
+/// Оформлюшка для "окна" регистрации
+/// </summary>
 internal class RegistrationView
 {
     UserService userService;

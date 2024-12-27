@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SocNet.BLL.Models;
 using SocNet.PLL.Helpers;
 using SocNet.BLL.Exceptions;
 
 namespace SocNet.PLL.Views;
 
+/// <summary>
+/// Оформлюшка для "окна" просмотра и добавления друзей
+/// </summary>
 internal class FriendsInfoView
 {
     UserService userService;
@@ -24,7 +26,7 @@ internal class FriendsInfoView
 
     public void Show(User user)
     {
-        Console.WriteLine($"Friends: {user.friends.Count()}");
+        Console.WriteLine($"Friends: {user.friends.Count()}"); // почему-то друзья появляются после выхода-входа в отличие от сообщений
 
         if (user.friends.Count() == 0)
         {

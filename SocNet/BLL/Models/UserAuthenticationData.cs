@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.BLL.Models;
 
+/// <summary>
+/// Набор данных для авторизации
+/// </summary>
 internal class UserAuthenticationData
 {
     public string Email { get; set; }

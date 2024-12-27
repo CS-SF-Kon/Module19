@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.DAL.Entities;
 
+/// <summary>
+/// Набор даннх для связи с БД, обозначающий объект Пользователь
+/// </summary>
 internal class UserEntity
 {
     public int id { get; set; }

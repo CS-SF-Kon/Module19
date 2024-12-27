@@ -10,6 +10,9 @@ using SocNet.BLL.Exceptions;
 
 namespace SocNet.PLL.Views;
 
+/// <summary>
+/// Оформлюшка для "окна" оправки сообщения
+/// </summary>
 internal class MessageSendingView
 {
     UserService userService;

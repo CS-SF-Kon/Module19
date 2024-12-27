@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.BLL.Models;
 
+/// <summary>
+/// Набор данных для регистрации
+/// </summary>
 internal class UserRegistrationData
 {
     public string FirstName { get; set; }

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace SocNet.PLL.Views;
 
+/// <summary>
+/// Оформлюшка для "окна" редактирования профиля
+/// </summary>
 internal class UserDataUpdateView
 {
     UserService userService;
